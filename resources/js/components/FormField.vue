@@ -1,5 +1,5 @@
 <template>
-    <default-field :field="field" :errors="errors">
+    <default-field :field="currentField" :errors="errors">
         <template slot="field">
              <select v-model="value" class="w-full form-control form-select" :disabled="disabled">
                 <option :value="null" v-if="loaded && options.length">{{ __('Choose an option') }}</option>
@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import { FormField, HandlesValidationErrors } from 'laravel-nova'
+import { DependentFormField, HandlesValidationErrors } from 'laravel-nova'
 
 export default {
-    mixins: [FormField, HandlesValidationErrors],
+    mixins: [DependentFormField, HandlesValidationErrors],
 
     props: ['resourceName', 'resourceId', 'field'],
 

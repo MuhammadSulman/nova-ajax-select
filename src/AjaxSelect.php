@@ -3,9 +3,11 @@
 namespace NovaAjaxSelect;
 
 use Laravel\Nova\Fields\Field;
+use Laravel\Nova\Fields\SupportsDependentFields;
 
 class AjaxSelect extends Field
 {
+    use SupportsDependentFields;
     public $showOnIndex = false;
 
     public $showOnDetail = false;
